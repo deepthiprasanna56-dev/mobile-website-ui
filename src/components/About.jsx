@@ -34,11 +34,11 @@ export default function About() {
                 {/* Floating Badge on Image */}
                 <div className="absolute bottom-4 left-4 right-4 glass-card p-4 rounded-xl border border-slate-700/60 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-indigo-600 flex items-center justify-center text-white">
+                    <div className="w-10 h-10 rounded-lg bg-orange-500 flex items-center justify-center text-slate-950 shadow-md shadow-orange-500/30">
                       <FiCompass className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-white font-heading">
+                      <h4 className="text-sm font-extrabold text-white font-heading">
                         Mobile-First Perfection
                       </h4>
                       <p className="text-xs text-slate-300">
@@ -46,16 +46,16 @@ export default function About() {
                       </p>
                     </div>
                   </div>
-                  <span className="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                  <span className="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20 font-bold">
                     Active 2026
                   </span>
                 </div>
               </div>
 
               {/* Supporting Note */}
-              <div className="mt-4 p-4 rounded-2xl bg-slate-950/60 border border-slate-800 text-xs sm:text-sm text-slate-300 flex items-center justify-between">
+              <div className="mt-4 p-4 rounded-2xl bg-slate-950/60 border border-slate-800 text-xs sm:text-sm text-slate-300 flex items-center justify-between font-medium">
                 <span>Designed with responsive fluid layout math</span>
-                <span className="font-mono text-indigo-400 font-semibold">Vite + React 19</span>
+                <span className="font-mono text-orange-400 font-bold">Vite + React 19</span>
               </div>
             </div>
           </motion.div>
@@ -68,13 +68,13 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-6 flex flex-col justify-center"
           >
-            <span className="text-xs font-mono uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20 w-fit">
+            <span className="text-xs font-mono uppercase tracking-widest text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20 w-fit font-bold">
               Our Story & Mission
             </span>
 
-            <h2 className="mt-4 font-heading text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
+            <h2 className="mt-4 font-heading text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
               Rethinking Web UI for the{' '}
-              <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 bg-clip-text text-transparent">
                 Mobile-First Generation
               </span>
             </h2>
@@ -95,7 +95,7 @@ export default function About() {
                 'Fully accessible WCAG color contrast & ARIA menu roles',
               ].map((point, idx) => (
                 <div key={idx} className="flex items-center gap-3 text-sm text-slate-200">
-                  <FiCheckCircle className="w-5 h-5 text-indigo-400 shrink-0" />
+                  <FiCheckCircle className="w-5 h-5 text-orange-400 shrink-0" />
                   <span>{point}</span>
                 </div>
               ))}
@@ -108,7 +108,7 @@ export default function About() {
                   <span className="font-heading text-2xl sm:text-3xl font-extrabold text-white block">
                     {stat.value}
                   </span>
-                  <span className="text-[11px] sm:text-xs text-slate-400 mt-1 block">
+                  <span className="text-[11px] sm:text-xs text-slate-400 mt-1 block font-medium">
                     {stat.label}
                   </span>
                 </div>
@@ -120,3 +120,4 @@ export default function About() {
     </section>
   )
 }
+

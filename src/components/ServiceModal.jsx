@@ -1,39 +1,54 @@
+import { useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiX, FiCheckCircle, FiClock, FiStar, FiShield, FiArrowRight } from 'react-icons/fi'
 
 export default function ServiceModal({ service, onClose, onBookNow }) {
-  if (!service) return null
+  useEffect(() => {
+    if (service) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [service])
 
-  return (
+  if (!service) return null
+  if (typeof document === 'undefined') return null
+
+  return createPortal(
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-slate-950/80 backdrop-blur-md"
+          className="fixed inset-0 bg-slate-950/90 backdrop-blur-xl"
         />
 
         {/* Modal Window */}
         <motion.div
-          initial={{ scale: 0.9, opacity: 0, y: 20 }}
+          initial={{ scale: 0.9, opacity: 0, y: 15 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
-          exit={{ scale: 0.9, opacity: 0, y: 20 }}
+          exit={{ scale: 0.9, opacity: 0, y: 15 }}
           transition={{ type: 'spring', damping: 25, stiffness: 250 }}
-          className="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl z-10 my-8"
+          className="relative w-full max-w-2xl bg-slate-900 border border-orange-500/50 rounded-3xl overflow-hidden shadow-2xl z-10 my-auto max-h-[85vh] overflow-y-auto"
         >
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-slate-950/80 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/60 transition-colors"
+            className="absolute top-4 right-4 z-20 p-2.5 rounded-xl bg-slate-950/80 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/60 transition-colors shadow-md cursor-pointer"
+            aria-label="Close"
           >
             <FiX className="w-5 h-5" />
           </button>
 
           {/* Modal Header Image */}
-          <div className="relative h-64 sm:h-72 w-full bg-slate-950">
+          <div className="relative h-60 sm:h-64 w-full bg-slate-950">
             <img
               src={service.image}
               alt={service.title}
@@ -42,7 +57,7 @@ export default function ServiceModal({ service, onClose, onBookNow }) {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
 
             <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between">
-              <span className="px-3.5 py-1.5 rounded-full bg-indigo-600/90 text-white text-xs font-semibold shadow-md">
+              <span className="px-3.5 py-1.5 rounded-full bg-orange-500 text-slate-950 text-xs font-extrabold shadow-md">
                 {service.category}
               </span>
               <div className="flex items-center gap-1.5 bg-slate-900/90 px-3 py-1.5 rounded-full border border-slate-700 text-amber-400 text-xs font-bold">
@@ -56,17 +71,17 @@ export default function ServiceModal({ service, onClose, onBookNow }) {
           <div className="p-6 sm:p-8">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-6">
               <div>
-                <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white">
+                <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-white">
                   {service.title}
                 </h3>
-                <div className="mt-2 flex items-center gap-3 text-slate-400 text-xs sm:text-sm">
+                <div className="mt-2 flex items-center gap-3 text-slate-400 text-xs sm:text-sm font-medium">
                   <span className="flex items-center gap-1">
-                    <FiClock className="text-indigo-400" />
+                    <FiClock className="text-orange-400" />
                     {service.duration}
                   </span>
                   <span>•</span>
-                  <span className="flex items-center gap-1">
-                    <FiShield className="text-emerald-400" />
+                  <span className="flex items-center gap-1 text-emerald-400 font-bold">
+                    <FiShield />
                     Guaranteed Delivery
                   </span>
                 </div>
@@ -79,16 +94,16 @@ export default function ServiceModal({ service, onClose, onBookNow }) {
             </div>
 
             <div className="mt-6">
-              <h4 className="text-sm font-semibold text-slate-300 uppercase tracking-wider font-mono">
+              <h4 className="text-sm font-semibold text-slate-300 uppercase tracking-wider font-mono font-bold">
                 Overview & Description
               </h4>
-              <p className="mt-2 text-sm sm:text-base text-slate-300 leading-relaxed">
+              <p className="mt-2 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
                 {service.description}
               </p>
             </div>
 
             <div className="mt-6">
-              <h4 className="text-sm font-semibold text-slate-300 uppercase tracking-wider font-mono">
+              <h4 className="text-sm font-semibold text-slate-300 uppercase tracking-wider font-mono font-bold">
                 What's Included
               </h4>
               <ul className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -111,14 +126,14 @@ export default function ServiceModal({ service, onClose, onBookNow }) {
                   onClose()
                   onBookNow(service)
                 }}
-                className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-base shadow-xl shadow-indigo-600/30 flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-400 hover:from-orange-400 hover:to-amber-400 text-slate-950 font-extrabold text-base shadow-xl shadow-orange-500/30 flex items-center justify-center gap-2 cursor-pointer transition-all"
               >
                 <span>Book This Package Now</span>
                 <FiArrowRight className="w-5 h-5" />
               </button>
               <button
                 onClick={onClose}
-                className="w-full sm:w-auto py-4 px-6 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-base transition-colors"
+                className="w-full sm:w-auto py-4 px-6 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-base transition-colors cursor-pointer"
               >
                 Close
               </button>
@@ -126,6 +141,11 @@ export default function ServiceModal({ service, onClose, onBookNow }) {
           </div>
         </motion.div>
       </div>
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   )
 }
+
+  )
+}
+

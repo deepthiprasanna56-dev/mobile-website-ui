@@ -12,11 +12,11 @@ export default function ServiceCard({ service }) {
       viewport={{ once: true }}
       whileHover={{ y: -6 }}
       transition={{ duration: 0.4 }}
-      className="glass-card rounded-3xl overflow-hidden border border-slate-800 flex flex-col justify-between group hover:border-indigo-500/50 hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300 relative"
+      className="glass-card rounded-3xl overflow-hidden border border-slate-800 flex flex-col justify-between group hover:border-orange-500/50 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 relative"
     >
       {/* Popular Badge */}
       {popular && (
-        <div className="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-bold text-xs shadow-lg shadow-amber-500/20 uppercase tracking-wider">
+        <div className="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-slate-950 font-extrabold text-xs shadow-lg shadow-orange-500/20 uppercase tracking-wider">
           ★ Popular Choice
         </div>
       )}
@@ -32,7 +32,7 @@ export default function ServiceCard({ service }) {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
           
           <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between z-10">
-            <span className="px-3 py-1 rounded-full bg-slate-900/85 backdrop-blur-md border border-slate-700 text-xs font-mono text-indigo-300">
+            <span className="px-3 py-1 rounded-full bg-slate-900/85 backdrop-blur-md border border-slate-700 text-xs font-mono text-orange-300 font-semibold">
               {category}
             </span>
             <div className="flex items-center gap-1 text-amber-400 bg-slate-900/85 backdrop-blur-md px-2.5 py-1 rounded-full text-xs font-semibold border border-slate-700">
@@ -45,13 +45,13 @@ export default function ServiceCard({ service }) {
         {/* Content Body */}
         <div className="p-6">
           <div className="flex items-baseline justify-between gap-2">
-            <h3 className="font-heading text-xl font-bold text-white group-hover:text-indigo-300 transition-colors">
+            <h3 className="font-heading text-xl font-bold text-white group-hover:text-orange-300 transition-colors">
               {title}
             </h3>
           </div>
 
           <div className="mt-2 flex items-center gap-2 text-slate-400 text-xs font-medium">
-            <FiClock className="w-3.5 h-3.5 text-indigo-400" />
+            <FiClock className="w-3.5 h-3.5 text-orange-400" />
             <span>{duration}</span>
           </div>
 
@@ -79,7 +79,7 @@ export default function ServiceCard({ service }) {
 
         <Link
           to={`/service/${id}`}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold text-xs sm:text-sm shadow-md shadow-indigo-600/30 group-hover:shadow-indigo-600/50 active:scale-95 transition-all cursor-pointer"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 text-slate-950 font-extrabold text-xs sm:text-sm shadow-md shadow-orange-500/25 active:scale-95 transition-all cursor-pointer"
         >
           <span>View Separate Page</span>
           <FiArrowUpRight className="w-4 h-4" />
@@ -88,3 +88,4 @@ export default function ServiceCard({ service }) {
     </motion.article>
   )
 }
+

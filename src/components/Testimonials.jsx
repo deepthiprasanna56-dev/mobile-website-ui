@@ -48,20 +48,20 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="py-24 relative overflow-hidden bg-slate-950">
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto">
-          <span className="text-xs font-mono uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+          <span className="text-xs font-mono uppercase tracking-widest text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20 font-bold">
             Community Feedback
           </span>
-          <h2 className="mt-4 font-heading text-3xl sm:text-5xl font-bold text-white tracking-tight">
+          <h2 className="mt-4 font-heading text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Loved by Developers &{' '}
-            <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 bg-clip-text text-transparent">
               Design Leaders
             </span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-400">
+          <p className="mt-4 text-base sm:text-lg text-slate-300">
             Read what digital creators say about our responsive mobile UI components and interactive 3D scroll experiences.
           </p>
         </div>
@@ -86,7 +86,7 @@ export default function Testimonials() {
                     ))}
                   </div>
 
-                  <span className="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 text-xs font-mono">
+                  <span className="px-3 py-1 rounded-full bg-orange-500/10 text-orange-300 border border-orange-500/20 text-xs font-mono font-bold">
                     {item.tag}
                   </span>
                 </div>
@@ -102,13 +102,13 @@ export default function Testimonials() {
                 <img
                   src={item.avatar}
                   alt={item.name}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-indigo-500/40"
+                  className="w-12 h-12 rounded-full object-cover border-2 border-orange-500/40"
                 />
                 <div>
-                  <h4 className="font-heading font-bold text-white text-base">
+                  <h4 className="font-heading font-extrabold text-white text-base">
                     {item.name}
                   </h4>
-                  <p className="text-xs text-slate-400 mt-0.5">{item.role}</p>
+                  <p className="text-xs text-slate-400 mt-0.5 font-medium">{item.role}</p>
                 </div>
               </div>
             </motion.article>
@@ -118,3 +118,4 @@ export default function Testimonials() {
     </section>
   )
 }
+

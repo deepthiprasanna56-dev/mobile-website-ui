@@ -16,21 +16,21 @@ export default function Services() {
   return (
     <section id="services" className="py-24 relative overflow-hidden bg-slate-950">
       {/* Background glow */}
-      <div className="absolute top-1/2 right-10 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 right-10 w-96 h-96 bg-orange-600/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-96 h-96 bg-amber-600/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto">
-          <span className="text-xs font-mono uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+          <span className="text-xs font-mono uppercase tracking-widest text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20 font-bold">
             Products & Services
           </span>
-          <h2 className="mt-4 font-heading text-3xl sm:text-5xl font-bold text-white tracking-tight">
+          <h2 className="mt-4 font-heading text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             High-Impact Solutions for{' '}
-            <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 bg-clip-text text-transparent">
               Mobile Platforms
             </span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-400">
+          <p className="mt-4 text-base sm:text-lg text-slate-300">
             Explore our mobile UI components and packages. Click on any card to open its dedicated separate detail page!
           </p>
 
@@ -40,9 +40,9 @@ export default function Services() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                   selectedCategory === cat
-                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-600/30'
+                    ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-slate-950 shadow-lg shadow-orange-500/30'
                     : 'bg-slate-900/80 text-slate-400 hover:text-white border border-slate-800'
                 }`}
               >
@@ -67,3 +67,4 @@ export default function Services() {
     </section>
   )
 }
+

@@ -35,13 +35,13 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
             <Link to="/" className="flex items-center gap-2.5 group">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 p-0.5">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-orange-500 via-amber-500 to-orange-600 p-0.5 shadow-md shadow-orange-500/20">
                 <div className="w-full h-full bg-slate-950 rounded-[9px] flex items-center justify-center">
-                  <FiZap className="w-4 h-4 text-indigo-400" />
+                  <FiZap className="w-4 h-4 text-orange-400" />
                 </div>
               </div>
               <span className="font-heading font-extrabold text-xl text-white tracking-tight">
-                AURA<span className="text-indigo-400">3D</span> Studio
+                AURA<span className="text-orange-500">3D</span> Studio
               </span>
             </Link>
 
@@ -63,7 +63,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={s.label}
-                  className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-indigo-500/40 hover:bg-slate-800 transition-colors"
+                  className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-orange-400 hover:border-orange-500/40 hover:bg-slate-800 transition-colors"
                 >
                   <s.icon className="w-4 h-4" />
                 </a>
@@ -78,37 +78,37 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm font-medium">
               <li>
-                <Link to="/" className="hover:text-white transition-colors">
+                <Link to="/" className="hover:text-orange-400 transition-colors">
                   Home Overview
                 </Link>
               </li>
               <li>
-                <Link to="/experience" className="hover:text-white transition-colors">
+                <Link to="/experience" className="hover:text-orange-400 transition-colors">
                   3D Studio Page
                 </Link>
               </li>
               <li>
-                <Link to="/features" className="hover:text-white transition-colors">
+                <Link to="/features" className="hover:text-orange-400 transition-colors">
                   System Features
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-white transition-colors">
+                <Link to="/services" className="hover:text-orange-400 transition-colors">
                   Services Catalog
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-white transition-colors">
+                <Link to="/about" className="hover:text-orange-400 transition-colors">
                   About & Mission
                 </Link>
               </li>
               <li>
-                <Link to="/testimonials" className="hover:text-white transition-colors">
+                <Link to="/testimonials" className="hover:text-orange-400 transition-colors">
                   Testimonials
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-white transition-colors">
+                <Link to="/contact" className="hover:text-orange-400 transition-colors">
                   Contact Form
                 </Link>
               </li>
@@ -132,18 +132,18 @@ export default function Footer() {
                   placeholder="enter your email..."
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-orange-500"
                 />
                 <button
                   type="submit"
-                  className="absolute right-1.5 top-1.5 bottom-1.5 px-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg flex items-center justify-center transition-colors cursor-pointer"
+                  className="absolute right-1.5 top-1.5 bottom-1.5 px-3.5 bg-orange-500 hover:bg-orange-400 text-slate-950 font-extrabold rounded-lg flex items-center justify-center transition-colors cursor-pointer"
                   aria-label="Subscribe"
                 >
                   <FiSend className="w-4 h-4" />
                 </button>
               </div>
               {subscribed && (
-                <p className="text-xs text-emerald-400 flex items-center gap-1">
+                <p className="text-xs text-emerald-400 flex items-center gap-1 font-semibold">
                   <FiCheck /> Subscribed! Welcome to AURA3D newsletter.
                 </p>
               )}
@@ -156,13 +156,13 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} AURA3D Studio UI. Built with React & Tailwind CSS.</p>
 
           <div className="flex items-center gap-4">
-            <span className="text-slate-500">Mobile-First 320px–4K</span>
+            <span className="text-slate-500 font-mono">Mobile-First 320px–4K</span>
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition-colors cursor-pointer"
+              className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition-colors cursor-pointer font-bold"
             >
               <span>Back to Top</span>
-              <FiArrowUp className="w-3.5 h-3.5" />
+              <FiArrowUp className="w-3.5 h-3.5 text-orange-400" />
             </button>
           </div>
         </div>
@@ -170,3 +170,4 @@ export default function Footer() {
     </footer>
   )
 }
+

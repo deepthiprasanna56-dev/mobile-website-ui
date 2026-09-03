@@ -22,20 +22,20 @@ export default function ServiceDetailPage({ onOpenBooking }) {
   return (
     <div className="pt-28 pb-20 min-h-screen bg-slate-950 text-slate-100">
       {/* Background glow */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-indigo-600/20 via-purple-600/15 to-pink-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-orange-600/20 via-amber-600/15 to-orange-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Breadcrumb Navigation */}
-        <div className="flex items-center gap-2 text-xs font-mono text-slate-400 mb-8">
-          <Link to="/" className="hover:text-indigo-400 flex items-center gap-1 transition-colors">
+        <div className="flex items-center gap-2 text-xs font-mono text-slate-400 mb-8 font-bold">
+          <Link to="/" className="hover:text-orange-400 flex items-center gap-1 transition-colors">
             <FiArrowLeft className="w-3.5 h-3.5" /> Home
           </Link>
           <span>/</span>
-          <Link to="/services" className="hover:text-indigo-400 transition-colors">
+          <Link to="/services" className="hover:text-orange-400 transition-colors">
             Services
           </Link>
           <span>/</span>
-          <span className="text-indigo-400 font-semibold">{service.title}</span>
+          <span className="text-orange-400 font-bold">{service.title}</span>
         </div>
 
         {/* Dedicated Separate Page Header */}
@@ -56,11 +56,11 @@ export default function ServiceDetailPage({ onOpenBooking }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
 
                 <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <span className="px-3.5 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700 text-xs font-mono text-indigo-300 font-semibold">
+                  <span className="px-3.5 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700 text-xs font-mono text-orange-300 font-extrabold">
                     {service.category}
                   </span>
                   {service.popular && (
-                    <span className="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 text-xs font-bold font-mono">
+                    <span className="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-slate-950 text-xs font-extrabold font-mono shadow-md shadow-orange-500/20">
                       ★ Popular
                     </span>
                   )}
@@ -75,7 +75,7 @@ export default function ServiceDetailPage({ onOpenBooking }) {
 
             {/* Performance Specifications Grid */}
             <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4">
-              <h4 className="text-sm font-mono uppercase tracking-wider text-indigo-400 font-bold flex items-center gap-2">
+              <h4 className="text-sm font-mono uppercase tracking-wider text-orange-400 font-bold flex items-center gap-2">
                 <FiZap /> Technical Specifications
               </h4>
 
@@ -88,19 +88,19 @@ export default function ServiceDetailPage({ onOpenBooking }) {
                 </div>
                 <div className="p-3 bg-slate-900/80 rounded-2xl border border-slate-800">
                   <span className="text-[10px] text-slate-400 block font-mono">CORE TECH</span>
-                  <span className="text-xs font-bold text-indigo-400 font-mono">
+                  <span className="text-xs font-bold text-orange-400 font-mono">
                     {service.specs?.tech || 'React 19'}
                   </span>
                 </div>
                 <div className="p-3 bg-slate-900/80 rounded-2xl border border-slate-800">
                   <span className="text-[10px] text-slate-400 block font-mono">VIEWPORT</span>
-                  <span className="text-xs font-bold text-purple-400 font-mono">
+                  <span className="text-xs font-bold text-amber-400 font-mono">
                     {service.specs?.viewport || '320px Ready'}
                   </span>
                 </div>
                 <div className="p-3 bg-slate-900/80 rounded-2xl border border-slate-800">
                   <span className="text-[10px] text-slate-400 block font-mono">STANDARDS</span>
-                  <span className="text-xs font-bold text-pink-400 font-mono">
+                  <span className="text-xs font-bold text-orange-300 font-mono">
                     {service.specs?.accessibility || 'WCAG AAA'}
                   </span>
                 </div>
@@ -116,7 +116,7 @@ export default function ServiceDetailPage({ onOpenBooking }) {
           >
             <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-6">
               <div>
-                <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest block mb-2">
+                <span className="text-xs font-mono text-orange-400 uppercase tracking-widest block mb-2 font-bold">
                   Dedicated Separate Page View
                 </span>
                 <h1 className="font-heading text-3xl sm:text-4xl font-extrabold text-white">
@@ -124,16 +124,16 @@ export default function ServiceDetailPage({ onOpenBooking }) {
                 </h1>
                 <div className="mt-3 flex items-center gap-4 text-xs font-medium text-slate-400">
                   <span className="flex items-center gap-1.5">
-                    <FiClock className="text-indigo-400" /> {service.duration}
+                    <FiClock className="text-orange-400" /> {service.duration}
                   </span>
                   <span>&bull;</span>
-                  <span className="flex items-center gap-1.5 text-emerald-400">
+                  <span className="flex items-center gap-1.5 text-emerald-400 font-bold">
                     <FiShield /> Guaranteed Delivery
                   </span>
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-gradient-to-r from-indigo-950/60 to-purple-950/60 border border-indigo-500/30 flex items-center justify-between">
+              <div className="p-4 rounded-2xl bg-gradient-to-r from-orange-950/60 to-amber-950/60 border border-orange-500/30 flex items-center justify-between">
                 <div>
                   <span className="text-xs text-slate-400 block font-mono">Package Investment</span>
                   <span className="text-3xl font-extrabold text-white font-heading">
@@ -142,7 +142,7 @@ export default function ServiceDetailPage({ onOpenBooking }) {
                 </div>
                 <button
                   onClick={() => onOpenBooking(service)}
-                  className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-sm shadow-lg shadow-indigo-600/30 active:scale-95 transition-all cursor-pointer flex items-center gap-2"
+                  className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 text-slate-950 font-extrabold text-sm shadow-lg shadow-orange-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-2"
                 >
                   <span>Book Package Now</span>
                   <FiArrowUpRight />
@@ -170,7 +170,7 @@ export default function ServiceDetailPage({ onOpenBooking }) {
 
               <button
                 onClick={() => onOpenBooking(service)}
-                className="w-full py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-base shadow-xl shadow-indigo-600/30 flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-[0.99]"
+                className="w-full py-4 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 text-slate-950 font-extrabold text-base shadow-xl shadow-orange-500/30 flex items-center justify-center gap-2 cursor-pointer transition-all active:scale-[0.99]"
               >
                 <span>Book This Service Session</span>
                 <FiArrowUpRight className="w-5 h-5" />
@@ -182,8 +182,8 @@ export default function ServiceDetailPage({ onOpenBooking }) {
         {/* Related Services Showcase */}
         <div className="mt-20 border-t border-slate-800 pt-16">
           <div className="flex items-center justify-between mb-8">
-            <h3 className="font-heading text-2xl font-bold text-white">Explore Other Mobile Services</h3>
-            <Link to="/services" className="text-xs font-mono text-indigo-400 hover:underline">
+            <h3 className="font-heading text-2xl font-extrabold text-white">Explore Other Mobile Services</h3>
+            <Link to="/services" className="text-xs font-mono text-orange-400 hover:underline font-bold">
               View All Services &rarr;
             </Link>
           </div>
@@ -193,18 +193,18 @@ export default function ServiceDetailPage({ onOpenBooking }) {
               <div
                 key={rel.id}
                 onClick={() => navigate(`/service/${rel.id}`)}
-                className="glass-card p-5 rounded-3xl border border-slate-800 hover:border-indigo-500/50 cursor-pointer group transition-all"
+                className="glass-card p-5 rounded-3xl border border-slate-800 hover:border-orange-500/50 cursor-pointer group transition-all"
               >
                 <div className="h-40 rounded-2xl overflow-hidden mb-4 bg-slate-950">
                   <img src={rel.image} alt={rel.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                 </div>
-                <span className="text-[10px] font-mono text-indigo-400 uppercase">{rel.category}</span>
-                <h4 className="font-heading text-base font-bold text-white group-hover:text-indigo-300 transition-colors mt-1">
+                <span className="text-[10px] font-mono text-orange-400 uppercase font-bold">{rel.category}</span>
+                <h4 className="font-heading text-base font-extrabold text-white group-hover:text-orange-300 transition-colors mt-1">
                   {rel.title}
                 </h4>
                 <div className="mt-3 flex items-center justify-between text-xs pt-3 border-t border-slate-800/60">
-                  <span className="font-bold text-white">{rel.price}</span>
-                  <span className="text-indigo-400 font-semibold flex items-center gap-1">
+                  <span className="font-extrabold text-white">{rel.price}</span>
+                  <span className="text-orange-400 font-bold flex items-center gap-1">
                     Open Separate Page &rarr;
                   </span>
                 </div>
@@ -216,3 +216,4 @@ export default function ServiceDetailPage({ onOpenBooking }) {
     </div>
   )
 }
+
