@@ -62,7 +62,7 @@ export default function Hero3DDevice() {
           rotateY,
           transformStyle: 'preserve-3d',
         }}
-        className="relative mx-auto w-[275px] sm:w-[315px] h-[530px] sm:h-[590px] rounded-[50px] p-3.5 bg-gradient-to-b from-slate-800 via-slate-900 to-slate-950 border-2 border-orange-500/60 shadow-[0_30px_70px_-15px_rgba(249,87,56,0.45)] group transition-all duration-300"
+        className="relative mx-auto w-[275px] sm:w-[315px] lg:w-[335px] h-[530px] sm:h-[590px] lg:h-[620px] rounded-[50px] p-3.5 bg-gradient-to-b from-slate-800 via-slate-900 to-slate-950 border-2 border-orange-500/60 shadow-[0_30px_70px_-15px_rgba(249,87,56,0.45)] group transition-all duration-300"
       >
         {/* Specular Lighting Glow Layer */}
         <motion.div
